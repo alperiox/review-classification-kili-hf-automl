@@ -1,7 +1,4 @@
-'''
-Sets the distinct elements of two datasets to be reviewed
-'''
-
+# Set up the Kili client and arguments
 from kili.client import Kili
 from dotenv import load_dotenv
 import os
@@ -36,6 +33,9 @@ df2 = pd.read_csv(args['second'])
 diff_df = pd.concat((df1, df2)).drop_duplicates(keep=False)
 diff_ids = diff_df['id'].to_list()
 
+# The changes should be given as an array that
+# contains the change for every single sample.
+# That’s why [‘TO_REVIEW’] * len(diff_df) is passed to status_array argument
 kili.update_properties_in_assets(diff_ids,
                                  status_array=['TO_REVIEW'] * len(diff_ids))
 

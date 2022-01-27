@@ -14,7 +14,6 @@ parser.add_argument('--output_name',
                     default='dataset.csv')
 parser.add_argument('--remove', required=False, type=str)
 args = vars(parser.parse_args())
-print(args)
 
 API_KEY = os.getenv('KILI_API_KEY')
 dataset_path = '..\data\processed\lowercase_cleaned_dataset.csv'
