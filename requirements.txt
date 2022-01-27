@@ -5,6 +5,7 @@ async-timeout==4.0.2
 attrs==21.4.0
 backcall==0.2.0
 bayesian-optimization==1.2.0
+beautifulsoup4==4.10.0
 black==21.12b0
 certifi==2021.10.8
 charset-normalizer==2.0.10
@@ -25,6 +26,7 @@ fonttools==4.28.5
 frozenlist==1.3.0
 fsspec==2022.1.0
 future==0.18.2
+gdown==4.2.0
 google-play-scraper==1.0.3
 grpcio==1.43.0
 huggingface-hub==0.4.0
@@ -66,6 +68,7 @@ pyarrow==6.0.1
 Pygments==2.11.2
 pyparsing==3.0.7
 pyrsistent==0.18.1
+PySocks==1.7.1
 python-dateutil==2.8.2
 python-dotenv==0.19.2
 pytz==2021.3
@@ -82,12 +85,14 @@ scikit-optimize==0.9.0
 scipy==1.7.3
 seaborn==0.11.2
 six==1.16.0
+soupsieve==2.3.1
 stack-data==0.1.4
 tabulate==0.8.9
 tensorboardX==2.4.1
 threadpoolctl==3.0.0
 tokenizers==0.10.3
 tomli==1.2.3
+torch==1.10.1+cu102
 tornado==6.1
 tqdm==4.62.3
 traitlets==5.1.1
