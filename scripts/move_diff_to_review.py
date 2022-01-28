@@ -33,6 +33,9 @@ df2 = pd.read_csv(args['second'])
 diff_df = pd.concat((df1, df2)).drop_duplicates(keep=False)
 diff_ids = diff_df['id'].to_list()
 
+if diff_ids == []:
+    raise Exception('The two data sets are equivalent')
+
 # The changes should be given as an array that
 # contains the change for every single sample.
 # That’s why [‘TO_REVIEW’] * len(diff_df) is passed to status_array argument

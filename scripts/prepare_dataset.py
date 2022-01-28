@@ -16,8 +16,9 @@ parser.add_argument('--remove', required=False, type=str)
 args = vars(parser.parse_args())
 
 API_KEY = os.getenv('KILI_API_KEY')
-dataset_path = '..\data\processed\lowercase_cleaned_dataset.csv'
-output_path = os.path.join('..\data\processed', args['output_name'])
+PROJECT_ID = os.getenv('PROJECT_ID')
+dataset_path = 'data\processed\lowercase_cleaned_dataset.csv'
+output_path = os.path.join('data\processed', args['output_name'])
 
 
 def extract_labels(labels_dict):
@@ -33,9 +34,7 @@ kili = Kili(API_KEY)
 print('Authenticated!')
 # query will return a list that contains matched elements (projects in this case)
 # since we have only one project with this name, we can just pick the first index
-project = kili.projects(
-    search_query='User review dataset for topic classification')[0]
-project_id = project['id']
+project = kili.projects(project_id=PROJECT_ID)[0]
 
 # we can customize the returned fields
 # the fields below are pretty much enough,
@@ -47,7 +46,7 @@ returned_fields = [
 dataset = pd.read_csv(dataset_path)
 
 # we can fetch the data as a dataframe
-df = kili.assets(project_id=project_id,
+df = kili.assets(project_id=PROJECT_ID,
                  status_in=['LABELED', 'REVIEWED'],
                  fields=returned_fields,
                  format='pandas')
