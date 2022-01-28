@@ -92,7 +92,6 @@ tensorboardX==2.4.1
 threadpoolctl==3.0.0
 tokenizers==0.10.3
 tomli==1.2.3
-torch==1.10.1+cu102
 tornado==6.1
 tqdm==4.62.3
 traitlets==5.1.1
