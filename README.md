@@ -18,10 +18,15 @@ Script to collect the reviews by using [google-play-scraper](https://pypi.org/pr
 >> Arguments
 
 > lang (l): The language reviews written in, default: English
+> 
 > country (c): The country to pull the reviews from, default: US
+> 
 > name (n): Package name of the application (Google Play Store)
+> 
 > count (co): Number of reviews to collect, default:10, `all` to get all reviews
+> 
 > filter (f): Integer to filter the reviews by rating, None for all rating. default: None
+> 
 > help: Shows the argument descriptions
 
 >> Usage
@@ -47,6 +52,7 @@ Moves the distinct elements of the given two datasets into `To Review` section i
 >> Arguments
 
 > first: first CSV dataset to load,
+> 
 > second: second CSV dataset to load
 
 >> Usage
@@ -61,9 +67,10 @@ Pulls the labeled and reviewed data separately and saves it with the given file 
 >> Arguments
 
 > output_name: File name for the pulled dataset. (it should include .csv extension too)
+> 
 > remove (optional): Label to remove from the dataset 
 
 
 >> Usage
 
-> python scripts/prepare_dataset.py --output_name=final_dataset.csv
+> python scripts/prepare_dataset.py --output_name final_dataset.csv
